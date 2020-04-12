@@ -92,3 +92,13 @@ $(window).scroll(function() {
     }
   });
 })(jQuery);
+					
+
+//////// select dropdown on change class ////////
+					
+var selectedScheme = 'Default';
+
+$('#color_scheme').change(function(){
+    $('span').removeClass(selectedScheme).addClass($(this).val());
+    selectedScheme = $(this).val();
+});
