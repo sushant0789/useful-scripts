@@ -102,3 +102,23 @@ $('#color_scheme').change(function(){
     $('span').removeClass(selectedScheme).addClass($(this).val());
     selectedScheme = $(this).val();
 });
+
+					
+//////// phone number only / no characters ////////
+					
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+    return true;
+}    
+					
+$(".phone").on('keyup',function (e) {
+        var ptn = /[^0-9,]/g;
+        var obj = $(".phone")[0];
+
+        if (ptn.test(obj.value))
+        {
+            obj.value = obj.value.replace(ptn,'');
+        }
+    });
