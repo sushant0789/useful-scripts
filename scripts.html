@@ -124,3 +124,12 @@ $(".phone").on('keyup',function (e) {
             obj.value = obj.value.replace(ptn,'');
         }
     });
+
+					
+/////////// remove blank p tags ////////////////////
+					
+$('p').each(function() {
+    var $this = $(this);
+    if($this.html().replace(/\s|&nbsp;/g, '').length == 0)
+        $this.remove();
+});
